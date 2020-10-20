@@ -1,26 +1,37 @@
 import React from 'react'
-import './todo.scss';
+import { ListGroup, Card, Button} from 'react-bootstrap'
+import './todo.scss'
 
-import { ListGroup } from 'react-bootstrap';
 const ToDoList = (props) => {
+
+
+
+
+
   return (
     <ListGroup className="ListGroup" variant="flush">
       {props.list.map(item => (
-        <ListGroup.Item className={`listGroupItem complete-${item.complete.toString()}`}
-          key={item._id} >
-          <span onClick={() => props.handleComplete(item._id)}>
-            {item.text}
-          </span>
-        </ListGroup.Item>
+        <Card style={{ width: '15rem', height: '10rem' }}>
+          <Card.Header id='card-header'>
+          <Button variant={!item.complete ? "success": "danger"} onClick={() => props.handleComplete(item._id)} className={`listGroupsItem complete-${item.complete.toString()}`}>{ !item.complete ? "pending": "completed"}</Button>
+          <h4>{item.assignee}</h4> 
+          </Card.Header>
+          
+          <Card.Body>
+            {/* <ListGroup.Item className={`listGroupItem complete-${item.complete.toString()}`} */}
+              {/* key={item._id} > */}
+              
+              <span onClick={() => props.handleComplete(item._id)}>
+                {item.text}
+              </span>
+            {/* </ListGroup.Item> */}
+            <Button  onClick={()=> props.deleteTask(item._id)} variant='light' style={{color:"red"}} >X</Button>
+          </Card.Body>
+        </Card>
       ))}
     </ListGroup>
   );
 }
-export default ToDoList;
 
 
-{/* <ListGroup variant="flush">
-    <ListGroup.Item>Cras justo odio</ListGroup.Item>
-    <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-    <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-  </ListGroup> */}
+export default ToDoList
