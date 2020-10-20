@@ -5,7 +5,7 @@ import ToDo from './components/todo';
 export default class App extends React.Component {
   render() {
     return (
-      <>
+      <div>
 
         <Navbar bg="primary" variant="dark">
           <Navbar.Brand href="#home">Home</Navbar.Brand>
@@ -21,7 +21,7 @@ export default class App extends React.Component {
 
 
         <ToDo />
-      </>
+      </div>
     );
   }
 }

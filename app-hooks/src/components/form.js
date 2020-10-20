@@ -18,11 +18,11 @@ export default function FormData(props) {
     setItem(item)
   }
   return (
-    <>
+    <div>
       <Card style={{ width: '24rem', height: '25rem' }}>
-        
+
         <Form onSubmit={handleSubmit} style={{ margin: '20px' }}>
-        <h3>Add Item</h3>
+          <h3>Add Item</h3>
           <Form.Label>
             <span>To Do Item</span>
             <Form.Control
@@ -42,6 +42,6 @@ export default function FormData(props) {
           <Button variant="primary" type="submit">Add Item</Button >
         </Form>
       </Card>
-    </>
+    </div>
   );
 }
