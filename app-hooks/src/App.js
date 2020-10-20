@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar} from 'react-bootstrap';
-import ToDo from './components/todo';
+import ToDo from './components/todo-connected';
 
 export default class App extends React.Component {
   render() {
